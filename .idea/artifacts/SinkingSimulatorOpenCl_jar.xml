@@ -1,0 +1,97 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SinkingSimulatorOpenCl:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SinkingSimulatorOpenCl_jar</output-path>
+    <root id="archive" name="SinkingSimulatorOpenCl.jar">
+      <element id="module-output" name="SS2Engine" />
+      <element id="directory" name="com">
+        <element id="directory" name="wicpar">
+          <element id="directory" name="sinking_simulator">
+            <element id="directory" name="clprograms">
+              <element id="dir-copy" path="$PROJECT_DIR$/SS2Engine/src/com/wicpar/sinking_simulator/clprograms" />
+            </element>
+            <element id="directory" name="glprograms">
+              <element id="dir-copy" path="$PROJECT_DIR$/SS2Engine/src/com/wicpar/sinking_simulator/glprograms" />
+            </element>
+          </element>
+        </element>
+      </element>
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/joml-1.9.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-assimp.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-bgfx.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-egl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-glfw.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-jawt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-jemalloc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-lmdb.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nanovg.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nfd.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nuklear.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-openal.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opencl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengles.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-ovr.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-par.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-sse.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-stb.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-tinyfd.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-vulkan.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-xxhash.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/steamworks4j-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-assimp-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-openal-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-bgfx-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-bgfx-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-stb-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nuklear-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-glfw-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-lmdb-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nuklear-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-glfw-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-jemalloc-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nanovg-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-lmdb-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nfd-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nfd-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-assimp-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-assimp-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-bgfx-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nfd-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nuklear-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nanovg-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-lmdb-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-jemalloc-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-glfw-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-nanovg-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-jemalloc-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-openal-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-openal-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengl-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengl-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengl-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengles-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengles-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-opengles-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-par-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-par-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-par-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-ovr-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-sse-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-sse-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-sse-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-stb-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-stb-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-tinyfd-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-tinyfd-natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-tinyfd-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-xxhash-natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-xxhash-natives-macos.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SS2Engine/jar/lwjgl-xxhash-natives-windows.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
