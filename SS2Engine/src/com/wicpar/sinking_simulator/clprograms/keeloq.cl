@@ -33,6 +33,9 @@ __kernel void keeloq(__global uint *encrypted, __global uint *ret, uint2 arange,
     const int id = get_global_id(0);
     if (id >= num)
         return;
+    uint diff = brange.y - brange.x + 1;
+    brange.x += id * diff;
+    brange.y += id * diff;
 
     uint x = arange.x - 1;
     while (++x <= arange.y)

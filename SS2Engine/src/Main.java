@@ -50,18 +50,24 @@ public class Main {
             make.enqueue(queue, 1).awaitCompletion();
             System.out.println(keys.get(0) + " : " + keys.get(1));
 
-            int i = -1;
-            while (++i < 1024) {
-                find.setArg(2, i, i);
-                find.setArg(3, 0, 1024);
-                find.setArg(4, 1024);
-                find.enqueue(queue, 1024).awaitCompletion();
-                clEnqueueReadBuffer(queue.getId(), decrypted.getId(), 1, 0, ret, null, null);
-                if (ret.get(0) == keys.get(0) && ret.get(1) == keys.get(1)) {
-                    System.out.println(ret.get(0) + " : " + ret.get(1));
-                    return;
+            final int cores = 1024;
+            final int iters = 1024;
+            final int start = 65535;
+            int i = start - 1;
+            while (++i < start + 1) {
+                int j = -1;
+                while (++j < 0x100000000L / cores / iters) {
+                    find.setArg(2, i, i);
+                    find.setArg(3, j * cores * iters, j * cores * iters + iters);
+                    find.setArg(4, cores);
+                    find.enqueue(queue, cores).awaitCompletion();
+                    clEnqueueReadBuffer(queue.getId(), decrypted.getId(), 1, 0, ret, null, null);
+                    if (ret.get(0) == keys.get(0) && ret.get(1) == keys.get(1)) {
+                        System.out.println(ret.get(0) + " : " + ret.get(1));
+                        return;
+                    }
+                    System.out.println(i + " : " + j + " / 4096");
                 }
-                System.out.println(i);
             }
         } catch (final Exception e) {
             e.printStackTrace();
