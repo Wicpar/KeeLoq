@@ -39,6 +39,11 @@ public class CLProgram extends CLObject{
 		this(device, new CLProgramSource(clContext, FileReader.readFile(path)));
 	}
 
+
+	public CLProgram(final CLDevice device, final CLContext clContext, final String path, final String options) {
+		this(device, new CLProgramSource(clContext, FileReader.readFile(path), options));
+	}
+
 	public CLDevice getDevice() {
 		return device;
 	}

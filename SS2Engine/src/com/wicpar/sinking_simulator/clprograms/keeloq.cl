@@ -1,54 +1,67 @@
 #define bitRead(value, bit) (((value) >> (bit)) & 0x01)
 #define KeeLoq_NLF (0x3A5C742E)
+#define KeeLoq_NLF2 (uint2)(0x3A5C742E)
+
+static uint2 decrypt2(const uint2 data, const uint _keyLow, const uint _keyHigh) {
+    const ulong key = ((ulong)_keyHigh) << 32 | _keyLow;
+    uint2 x = data;
+    uint r;
+    uint2 bitVal;
+
+    #pragma unroll
+    for (r = 0; r < 528; r++)
+    {
+        bitVal = bitRead(x,31) ^
+        bitRead(x, 15) ^
+        bitRead(KeeLoq_NLF2, (x & 1) | (bitRead(x,8) << 1) | (bitRead(x,19) << 2) | (bitRead(x,25) << 3) | (bitRead(x,30) << 4)) ^
+        (uint)(bitRead(key, (15-r) & 63));
+        x = (x<<1) | bitVal;
+    }
+    return x;
+}
 
 static uint decrypt(const uint data, const uint _keyLow, const uint _keyHigh) {
+  const ulong key = ((ulong)_keyHigh) << 32 | _keyLow;
   uint x = data;
   uint r;
-  int keyBitNo, index;
-  uint keyBitVal,bitVal;
 
+  #pragma unroll
   for (r = 0; r < 528; r++)
   {
-    keyBitNo = (15-r) & 63;
-    if(keyBitNo < 32)
-      keyBitVal = bitRead(_keyLow,keyBitNo);
-    else
-      keyBitVal = bitRead(_keyHigh, keyBitNo - 32);
-    index = 1 * bitRead(x,0) + 2 * bitRead(x,8) + 4 * bitRead(x,19) + 8 * bitRead(x,25) + 16 * bitRead(x,30);
-    bitVal = bitRead(x,31) ^ bitRead(x, 15) ^ bitRead(KeeLoq_NLF,index) ^ keyBitVal;
-    x = (x<<1) ^ bitVal;
+    const uchar bitVal = bitRead(x,31) ^
+    bitRead(x, 15) ^
+    bitRead(KeeLoq_NLF,(x & 1) + (bitRead(x,8) << 1) + (bitRead(x,19) << 2) + (bitRead(x,25) << 3) + (bitRead(x,30) << 4)) ^
+    bitRead(key, (15-r) & 63);
+    x = (x<<1) | bitVal;
   }
   return x;
 }
 
-static int check(const uint a, const uint b) {
-    if (a == b)
-        return 0;
-    if (((b & 0xFFFF) - (a & 0xFFFF)) < 7 && (a & 0xFFFF0000) == (b & 0xFFFF0000))
-        return 1;
-    return 0;
+static inline int check(const uint a, const uint b) {
+    return (b - a < 7 && a != b);
 }
 
-__kernel void keeloq(__global uint *encrypted, __global uint *ret, uint2 arange, uint2 brange, int num) {
+__kernel void keeloq(__global uint2 *encrypted, __global uint *ret, uint2 arange, uint2 brange, int num) {
     const int id = get_global_id(0);
     if (id >= num)
         return;
-    uint diff = brange.y - brange.x + 1;
-    brange.x += id * diff;
-    brange.y += id * diff;
-
+    {
+        uint diff = brange.y - brange.x + 1;
+        brange.x += id * diff;
+        brange.y += id * diff;
+    }
     uint x = arange.x - 1;
     while (++x <= arange.y)
     {
         uint y = brange.x - 1;
         while (++y <= brange.y)
         {
-            uint a, b, c;
-            a = decrypt(encrypted[0], x, y);
-            b = decrypt(encrypted[1], x, y);
-            if (check(a, b)) {
-                c = decrypt(encrypted[2], x, y);
-                if (check(b, c)) {
+            const ulong key = ((ulong)y) << 32 | x;
+
+            uint2 d = decrypt2(encrypted[0], x, y);
+            if (check(d.x, d.y)) {
+                uint c = decrypt(encrypted[1].x, x, y);
+                if (check(d.y, c)) {
                     ret[0] = x;
                     ret[1] = y;
                    return;

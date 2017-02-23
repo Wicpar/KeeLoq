@@ -22,6 +22,10 @@ public class CLProgramHandler {
 	}
 
 	public CLKernel getProgram(final String name) {
+		return getProgram(name, "");
+	}
+
+	public CLKernel getProgram(final String name, final String options) {
 		final CLKernel toRet = programs.get(name);
 		if (programs.get(name) != null)
 			return toRet;

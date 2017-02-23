@@ -33,6 +33,10 @@ public class CLKernel extends CLObject {
 		this(new CLProgram(device, clContext, path), name);
 	}
 
+	public CLKernel(final CLDevice device, final CLContext clContext, final String path, final String name, final String options) {
+		this(new CLProgram(device, clContext, path, options), name);
+	}
+
 	public void setArg(final int index, final CLBuffer... arg) {
 		switch (arg.length) {
 			case 1:

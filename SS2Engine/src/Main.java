@@ -28,7 +28,7 @@ public class Main {
             ctxProps.put(CL_CONTEXT_PLATFORM)
                     .put(OpenCL.platforms.get(0).getId())
                     .put(0).flip();
-            CLContext ctx = new CLContext(ctxProps, OpenCL.platforms.get(0).getGPUDevices(), OpenCL.clContextCallback, 0);
+            CLContext ctx = new CLContext(ctxProps, OpenCL.platforms.get(0).getDevices(), OpenCL.clContextCallback, 0);
             final CLProgramHandler programHandler = new CLProgramHandler(ctx, ctx.getDevices().get(0));
             final CLCommandQueue queue = new CLCommandQueue(ctx);
             final CLKernel make = programHandler.getProgram("keeloq_gen");
@@ -50,9 +50,9 @@ public class Main {
             make.enqueue(queue, 1).awaitCompletion();
             System.out.println(keys.get(0) + " : " + keys.get(1));
 
-            final int cores = 1024;
-            final int iters = 1024;
-            final int start = 65535;
+            final int cores = 2048;
+            final int iters = 2048;
+            final int start = keys.get(0);
             int i = start - 1;
             while (++i < start + 1) {
                 int j = -1;
@@ -66,7 +66,7 @@ public class Main {
                         System.out.println(ret.get(0) + " : " + ret.get(1));
                         return;
                     }
-                    System.out.println(i + " : " + j + " / 4096");
+                    System.out.println(i + " : " + j + " / " + (0x100000000L / cores / iters));
                 }
             }
         } catch (final Exception e) {
